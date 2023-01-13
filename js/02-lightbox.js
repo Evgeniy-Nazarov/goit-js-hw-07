@@ -17,7 +17,7 @@ function creatGalleryMarkup(items) {
         alt="${item.description}"
         />
         </a>
-        `).join('');    
+        `).join(''); 
 }
 
 const addGalleryMarkup = creatGalleryMarkup(galleryItems);
@@ -42,4 +42,8 @@ const galleryAction = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
     captionDelay: 250,
     captionPosition: 'bottom',
+    scrollZoom: false,
 });
+
+
+
