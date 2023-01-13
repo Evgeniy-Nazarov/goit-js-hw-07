@@ -6,6 +6,7 @@ console.log(galleryItems);
 const gallery = document.querySelector('.gallery');
 console.log(gallery);
 
+
 function creatGalleryMarkup(items) { 
     return items.map((item) => `
     <a class="gallery__item" href="${item.original}">
@@ -37,16 +38,8 @@ function onImageClick(evt) {
     }
 
 
-let galleryLightbox = new SimpleLightbox('.gallery a');
-galleryLightbox.on('show.simplelightbox', function () { 
-    captionsData(); 
+const galleryAction = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+    captionPosition: 'bottom',
 });
-
-
-
-galleryLightbox.on('close.simplelightbox', function () {
-    console.log('Close');
-}
-    
-);
-
